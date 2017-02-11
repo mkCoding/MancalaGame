@@ -1,0 +1,94 @@
+p.one {
+	border-style: solid;
+	border-width: 5px;
+	height: 280px;
+	width: 1178px;
+}
+
+hr {
+	width: 803px;
+	position: absolute;
+	top: 210px;
+	left: 191px;
+	color: black;
+	background-color: black;
+}
+
+.vertical-line-left {
+	position: absolute;
+	width: 7px;
+	height: 283px;
+	color: black;
+	top: 85px;
+	background-color: black;
+	left: 186px;
+}
+
+.vertical-line-right {
+	position: absolute;
+	width: 7px;
+	height: 283px;
+	color: black;
+	top: -2px;
+	background-color: black;
+	left: 805px;
+}
+
+/*each player pot*/
+.vertical-line-one {
+	width: 7px;
+	height: 283px;
+	background-color: black;
+	left: -673px;
+	position: absolute;
+}
+
+.vertical-line-two {
+	position: absolute;
+	width: 7px;
+	height: 284px;
+	color: black;
+	top: -2px;
+	background-color: black;
+	left: 130px;
+}
+
+.vertical-line-three {
+	position: absolute;
+	width: 7px;
+	height: 284px;
+	color: black;
+	top: 2px;
+	background-color: black;
+	left: 130px;
+}
+
+.vertical-line-four {
+	position: absolute;
+	width: 7px;
+	height: 284px;
+	color: black;
+	top: -2px;
+	background-color: black;
+	left: 130px;
+}
+
+.vertical-line-five {
+	position: absolute;
+	width: 7px;
+	height: 284px;
+	color: black;
+	top: 0px;
+	background-color: black;
+	left: 137px;
+}
+
+
+form {
+	position: absolute;
+	right: 93px;
+	top: 322px;
+	width: 199px;
+	border-style: solid;
+	height: 72px;
+}
