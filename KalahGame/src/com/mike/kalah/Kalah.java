@@ -1,18 +1,19 @@
 package com.mike.kalah;
 
 public class Kalah {
-
-	public int kalahSize = 0;
 	
+	//keep track of kalah's stone/seed count
+	public int kalahStoneCount;
 	
-	public Kalah(){}
-
-	public int getKalahSize() {
-		return kalahSize;
+	public Kalah(){
+		kalahStoneCount = 0;
 	}
 
-	public void setKalahSize(int kalahSize) {
-		this.kalahSize = kalahSize;
-	};
+	public int getKalahStoneCount() {
+		return kalahStoneCount;
+	}
 
+	public void setKalahStoneCount(int kalahStoneCount) {
+		this.kalahStoneCount = kalahStoneCount;
+	}
 }

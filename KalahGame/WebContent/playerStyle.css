@@ -22,7 +22,11 @@
 	font-size: 47px;
 	font-weight: bold;
 }
-
+#test{
+	position: absolute;
+	right: 454px;
+	top: 288px;
+}
 #player1Pot02 {
 	position: absolute;
 	right: 320px;

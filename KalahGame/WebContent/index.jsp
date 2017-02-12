@@ -45,17 +45,20 @@
 	<label id="player2Pot05" class="player2">6</label>
 	<label id="player2Pot06" class="player2">6</label>
 	
+	
+	
+	
 	<form action="MyServlet" method="get">
 
 		<!-- Player 1 submittal of Pots and current Kalah/Store -->
-		
+
 		<input type="hidden" class="player1KalahSubmit" name="player1Kalah" value="0"/>
-		<input type="hidden" id="number1" class="player1Submit01" name="player1Pot01" value="6"/>
-		<input type="hidden" class="player1Submit" name="player1Pot02" value="6"/>
-		<input type="hidden" class="player1Submit" name="player1Pot03" value="6"/>
-		<input type="hidden" class="player1Submit" name="player1Pot04" value="6"/>
-		<input type="hidden" class="player1Submit" name="player1Pot05" value="6"/>
-		<input type="hidden" class="player1Submit" name="player1Pot06" value="6"/>
+		<input type="hidden" id="number1" class="player1Pot01" name="player1Pot01" value="6"/>
+		<input type="hidden" id="number2" class="player1Pot02" name="player1Pot02" value="6"/>
+		<input type="hidden" id="number3" class="player1Pot03" name="player1Pot03" value="6"/>
+		<input type="hidden" id="number4" class="player1Pot04" name="player1Pot04" value="6"/>
+		<input type="hidden" id="number5" class="player1Pot05" name="player1Pot05" value="6"/>
+		<input type="hidden" id="number6" class="player1Pot06" name="player1Pot06" value="6"/>
 	
 		<input class="p1" type="radio" name="player" value="player1"> Player 1<br>
 		<input class="p2" type="radio" name="player" value="player2"> Player 2<br>
@@ -103,18 +106,21 @@
 			
 			//if id of label == name attribute of input
 			var labelId = $(this).attr('id');
-			var inputName = $('label').attr('name');
+			//var inputId = $('.player1Submit01').attr('id');
+			var inputId = $("."+labelId).attr('id');
 			
-			$('#number1').val(currentPotValCounter);
+			$('#' + inputId).val(currentPotValCounter);
 			
-			
-			
+		
 			// var id = $(this).attr('id');
 			//alert(id +" --> " + currentPotValCounter);
 			
 		});
 	}
 
+	
+	
+	
 	/* $(".player1").click(function() {
 			var currentPotValCounter = parseInt($(this).text());
 			currentPotValCounter++;
