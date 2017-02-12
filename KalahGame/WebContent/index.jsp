@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -10,7 +11,7 @@
 <link rel="stylesheet" href="playerStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<body>
+<body  onload =  "if (location.search.length < 1){ document.getElementById('form').submit()}">
 	<h1>Mancala Game</h1>
 
 	<p class="one"></p>
@@ -28,8 +29,10 @@
 	<label id="player1Kalah">0</label>
 	<label id="player2Kalah">0</label>
 	
+	
+	
 	<!-- Labels for each pot Player 1-->
-	<label id="player1Pot01" class="player1">6</label>
+	<label id="player1Pot01" class="player1">${myAttr}</label>
 	<label id="player1Pot02" class="player1">6</label>
 	<label id="player1Pot03" class="player1">6</label>
 	<label id="player1Pot04" class="player1">6</label>
@@ -48,7 +51,7 @@
 	
 	
 	
-	<form action="MyServlet" method="get">
+	<form action="MyServlet" id="form" method="get">
 
 		<!-- Player 1 submittal of Pots and current Kalah/Store -->
 
@@ -60,15 +63,21 @@
 		<input type="hidden" id="number5" class="player1Pot05" name="player1Pot05" value="6"/>
 		<input type="hidden" id="number6" class="player1Pot06" name="player1Pot06" value="6"/>
 	
-		<input class="p1" type="radio" name="player" value="player1"> Player 1<br>
-		<input class="p2" type="radio" name="player" value="player2"> Player 2<br>
-		<input type="submit" value="Submit">
+		<input class="p1" type="radio" name="player" id="p1Radio" value="player1"> Player 1<br>
+		<input class="p2" type="radio" name="player" id="p2Radio" value="player2"> Player 2<br>
+		<input type="submit" id="mySubmit" value="Submit">
 	</form>
+	
+
+
 
 	<script type="text/javascript">
-	$(document).ready(function(){
 	
-		
+	$("#p1Radio").prop("checked", true)
+     
+	
+	$(document).ready(function(){
+
 	/*the below radio button methods will allow switching 
 	 *between Player 1 and Player 2
 	*/

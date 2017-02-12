@@ -39,9 +39,16 @@ public class MyServlet extends HttpServlet {
 			player2.getKalahStoneCount();
 		}
 		
+		
+		//after submit set player pot to new number after submit
+		request.setAttribute("myAttr", request.getParameter("player1Pot01"));
+
+			
+		//redirect to the same page after submit of a particular player
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
 		
+	
 		System.out.println(request.getParameter("player1Kalah"));
 		System.out.println(request.getParameter("player1Pot01")); //print current pot number after click submittal
 		System.out.println(request.getParameter("player")); //prints the player selected
