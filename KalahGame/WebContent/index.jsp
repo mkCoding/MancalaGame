@@ -110,6 +110,7 @@
 				}
 		});
 		});
+	
 
 	
 	//only grab labels related to player 1
@@ -138,20 +139,15 @@
 			
 		});
 	}
-
 	
 	
-	
-	$(".player1").click(function() {
+	/*$(".player1").click(function() {
 			var currentPotValCounter = parseInt($(this).text());
 			currentPotValCounter++;
 			$(this).text(currentPotValCounter);	  
 			$('#number1').val(currentPotValCounter);
-	});
+	});*/
 	
-	
-		
-
 
 		 $(".player2").click(function() {
 				var currentPotValCounter = parseInt($(this).text());
