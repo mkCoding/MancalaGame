@@ -119,19 +119,17 @@
 	
 	for(var i = 0;i < labels.length; i++){
 		labels[i].addEventListener("click",function(){
-			//var data = $(this).text();
 			
 			var currentPotValCounter = parseInt($(this).text());
-			currentPotValCounter++;
-			$(this).text(currentPotValCounter);
-			// $('#number1').val(currentPotValCounter);
+			// currentPotValCounter++; //<----increment every pot for player 1
+			$(this).text(0);
 			
 			//if id of label == name attribute of input
 			var labelId = $(this).attr('id');
 			//var inputId = $('.player1Submit01').attr('id');
 			var inputId = $("."+labelId).attr('id');
 			
-			$('#' + inputId).val(currentPotValCounter);
+			$('#' + inputId).val(0);
 			
 		
 			// var id = $(this).attr('id');
