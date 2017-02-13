@@ -41,8 +41,12 @@ public class MyServlet extends HttpServlet {
 		
 		
 		//after submit set player pot to new number after submit
-		request.setAttribute("myAttr", request.getParameter("player1Pot01"));
-
+		request.setAttribute("myAttr1", request.getParameter("player1Pot01"));
+		request.setAttribute("myAttr2", request.getParameter("player1Pot02"));
+		request.setAttribute("myAttr3", request.getParameter("player1Pot03"));
+		request.setAttribute("myAttr4", request.getParameter("player1Pot04"));
+		request.setAttribute("myAttr5", request.getParameter("player1Pot05"));
+		request.setAttribute("myAttr6", request.getParameter("player1Pot06"));
 			
 		//redirect to the same page after submit of a particular player
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

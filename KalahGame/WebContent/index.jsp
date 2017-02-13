@@ -32,12 +32,12 @@
 	
 	
 	<!-- Labels for each pot Player 1-->
-	<label id="player1Pot01" class="player1">${myAttr}</label>
-	<label id="player1Pot02" class="player1">6</label>
-	<label id="player1Pot03" class="player1">6</label>
-	<label id="player1Pot04" class="player1">6</label>
-	<label id="player1Pot05" class="player1">6</label>
-	<label id="player1Pot06" class="player1">6</label>
+	<label id="player1Pot01" class="player1">${myAttr1}</label>
+	<label id="player1Pot02" class="player1">${myAttr2}</label>
+	<label id="player1Pot03" class="player1">${myAttr3}</label>
+	<label id="player1Pot04" class="player1">${myAttr4}</label>
+	<label id="player1Pot05" class="player1">${myAttr5}</label>
+	<label id="player1Pot06" class="player1">${myAttr6}</label>
 	
 	
 	<!-- Labels for each pot Player 1-->
@@ -73,35 +73,47 @@
 
 	<script type="text/javascript">
 	
+	
 	$("#p1Radio").prop("checked", true)
-     
 	
 	$(document).ready(function(){
-
+		
+		
 	/*the below radio button methods will allow switching 
 	 *between Player 1 and Player 2
 	*/
 	$("form > input.p1").click(function() {
-		  // alert("Player 1");
+		 
+		// Player 1 - This will allow the user to only select pots with stones count > 0
+		$(".player1").hover(function() {
+			
+			if(($('.player1').text()!="0") && (document.getElementById('p1Radio').checked) && !(document.getElementById('p2Radio').checked))
+				{
+					  $(this).css({ 'cursor': 'pointer' });
+				}else{
+					 $(this).css({ 'cursor': 'default' });
+				}
+				
+		});
+	
 		});
 	
 	$("form > input.p2").click(function() {
-		   // alert("Player 2");
-		});
-	
-
-	// Player 1 - This will allow the user to only select pots with stones count > 0
-	$(".player1").hover(function() {
-		
-		if($('.player1').text()!="0")
-			{
-				  $(this).css({ 'cursor': 'pointer' });
-			}
+		// Player 2 - This will allow the user to only select pots with stones count > 0
+		$(".player2").hover(function() {
 			
-	});
-	
+			if(($('.player2').text()!="0") && (document.getElementById('p2Radio').checked) && !(document.getElementById('p1Radio').checked))
+				{
+					  $(this).css({ 'cursor': 'pointer' });
+				}else{
+					$(this).css({ 'cursor': 'default' });
+				}
+		});
+		});
 
-	var labels = document.getElementsByTagName('label');
+	
+	//only grab labels related to player 1
+	var labels = document.getElementsByClassName('player1');
 	var hiddenIndex = document.getElementsByTagName('input');
 	
 	for(var i = 0;i < labels.length; i++){
@@ -130,22 +142,14 @@
 	
 	
 	
-	/* $(".player1").click(function() {
+	$(".player1").click(function() {
 			var currentPotValCounter = parseInt($(this).text());
 			currentPotValCounter++;
 			$(this).text(currentPotValCounter);	  
 			$('#number1').val(currentPotValCounter);
-	});*/
+	});
 	
-	// Player 2 - This will allow the user to only select pots with stones count > 0
-		$(".player2").hover(function() {
-			
-			if($('.player2').text()!="0")
-				{
-					  $(this).css({ 'cursor': 'pointer' });
-				}
-				
-		});
+	
 		
 
 
